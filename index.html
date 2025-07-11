@@ -2,65 +2,76 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>40 Tıklama Görevi</title>
-  <!-- Tam ekran ve zoom engelleme için gerekli -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hacker Panel</title>
   <style>
-    html, body {
-      height: 100%;
+    * {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      touch-action: manipulation;
-      -ms-touch-action: manipulation;
-      user-select: none;
-      overflow: hidden; /* Kaydırmayı da engeller */
+      box-sizing: border-box;
     }
 
-    #container {
-      height: 100%;
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
-    #resim {
-      display: none;
-      max-width: 90%;
-      max-height: 60%;
-      margin-top: 20px;
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ff00; }
+      to { text-shadow: 0 0 20px #00ff00; }
+    }
+
+    .button {
+      background-color: transparent;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    .button:hover {
+      background-color: #00ff00;
+      color: black;
+    }
+
+    .note {
+      margin-top: 40px;
+      font-size: 1em;
+      color: #00ff00;
+      max-width: 600px;
     }
   </style>
 </head>
 <body>
 
-<div id="container">
-  <h1 id="mesaj">Lütfen ekrana 40 kez tıkla</h1>
-  <p>Tıklama sayısı: <span id="sayac">0</span>/40</p>
-  <img id="resim" src="korku.jpg" alt="Korku Resmi">
-  <audio id="ses" src="ahlayankari.mp3"></audio>
-</div>
+  <h1>Bİ YANLIŞ YOK ALIN</h1>
 
-<script>
-  let tiklamaSayisi = 0;
+  <button class="button" onclick="location.href='https://sidrapanel.vercel.app/'">Panele Giriş</button>
+  <button class="button" onclick="location.href='https://www.paytr.com/link/fElTBrq'">Paneli Satın Al</button>
 
-  document.body.addEventListener("click", function () {
-    if (tiklamaSayisi < 40) {
-      tiklamaSayisi++;
-      document.getElementById("sayac").innerText = tiklamaSayisi;
-    }
-
-    if (tiklamaSayisi === 40) {
-      document.getElementById("mesaj").innerText = "Sürpriz geliyor...";
-      document.getElementById("resim").style.display = "block";
-      document.getElementById("ses").play();
-    }
-  });
-</script>
+  <p class="note">
+    İstediğiniz kişilerin IP adreslerini öğrenmek için paneli satın alın. Mahalle bilgisi girerek hedef kişinin IP’sini kolayca bulun.
+  </p>
 
 </body>
 </html>
